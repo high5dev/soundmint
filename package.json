@@ -1,0 +1,43 @@
+{
+  "name": "soundarts",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@netlify/plugin-nextjs": "^3.9.2",
+    "@sendgrid/mail": "^7.6.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "axios": "^0.24.0",
+    "bnc-notify": "^1.9.2",
+    "electron": "^16.0.2",
+    "formik": "^2.2.9",
+    "framer-motion": "^5.3.3",
+    "graphql": "^16.2.0",
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-countdown": "^2.3.2",
+    "react-dom": "17.0.2",
+    "react-facebook-pixel": "^1.0.4",
+    "react-intersection-observer": "^8.32.5",
+    "react-toastify": "^8.1.0",
+    "sass": "^1.49.8",
+    "wavesurfer.js": "^5.2.0",
+    "web3": "^1.6.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "eslint": "7",
+    "eslint-config-next": "12.0.4",
+    "postcss": "^8.3.11",
+    "sass-loader": "^12.6.0",
+    "tailwindcss": "^2.2.19",
+    "webpack": "^5.69.1"
+  }
+}

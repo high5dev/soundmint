@@ -1,0 +1,31 @@
+name: Deploy to AWS EC2
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  Deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Deploy in EC2
+        env:
+            PRIVATE_KEY: ${{ secrets.AWS_PK  }}
+            HOSTNAME : ${{ secrets.AWS_HOST  }}
+            USER_NAME : ${{ secrets.AWS_USER  }}
+            
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          
+            #Now we have got the access of EC2 and we will start the deploy .
+            cd /home/ubuntu/soundmint-v2 &&
+            git checkout main &&
+            git fetch --all &&
+            git reset --hard origin/main &&
+            git pull origin main &&
+            yarn build &&
+            pm2 restart 0
+          '
